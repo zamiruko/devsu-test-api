@@ -1,31 +1,31 @@
 
-# Conclusiones del Ejercicio de Pruebas de API
+Conclusiones del Ejercicio de Pruebas de API
 
-## Resumen de las Pruebas Ejecutadas
+1) Resumen de las Pruebas Ejecutadas
 
 Durante el proceso de pruebas automatizadas de las funcionalidades de login y signup de la página DemoBlaze, se han identificado comportamientos críticos que requieren atención. Las pruebas se centraron en dos escenarios principales para cada funcionalidad: la creación de un nuevo usuario (signup) y el inicio de sesión (login) con credenciales válidas e inválidas.
 
-## Hallazgos Clave
+2) Hallazgos Clave
 
-### Pruebas de Login
+Pruebas de Login
 
-- **Login Exitoso**: Las pruebas automatizadas confirmaron que el sistema permite correctamente el inicio de sesión con credenciales válidas, devolviendo un estado HTTP 200, lo cual es el comportamiento esperado.
+-Login Exitoso**: Las pruebas automatizadas confirmaron que el sistema permite correctamente el inicio de sesión con credenciales válidas, devolviendo un estado HTTP 200, lo cual es el comportamiento esperado.
 
-- **Login con Usuario Existente**: Al intentar iniciar sesión con credenciales inválidas, se esperaba recibir un código de estado HTTP 401, indicando una autenticación fallida. Sin embargo, la prueba reveló que la API devuelve un estado HTTP 200, acompañado de un mensaje en el cuerpo de la respuesta indicando que el usuario ya existe. Este comportamiento es inconsistente con las prácticas estándar de manejo de errores en APIs y puede llevar a confusión en el manejo de la autenticación y validación de usuarios.
+-Login con Usuario Existente**: Al intentar iniciar sesión con credenciales inválidas, se esperaba recibir un código de estado HTTP 401, indicando una autenticación fallida. Sin embargo, la prueba reveló que la API devuelve un estado HTTP 200, acompañado de un mensaje en el cuerpo de la respuesta indicando que el usuario ya existe. Este comportamiento es inconsistente con las prácticas estándar de manejo de errores en APIs y puede llevar a confusión en el manejo de la autenticación y validación de usuarios.
 
-### Pruebas de Signup
+Pruebas de Signup
 
-- **Creación de Nuevo Usuario**: El proceso de registro de nuevos usuarios funciona como se espera, con la API devolviendo un estado HTTP 200 para indicar el éxito en la creación del usuario.
+-Creación de Nuevo Usuario**: El proceso de registro de nuevos usuarios funciona como se espera, con la API devolviendo un estado HTTP 200 para indicar el éxito en la creación del usuario.
 
-- **Registro de Usuario Existente**: Similar al escenario de login con usuario existente, al intentar registrar un usuario que ya existe, la API devuelve un estado HTTP 200 en lugar del esperado 401 o un código específico que denote un conflicto o una condición de error. Este comportamiento no sigue las mejores prácticas de desarrollo de API, ya que no proporciona una distinción clara entre las respuestas exitosas y las condiciones de error.
+-Registro de Usuario Existente: Similar al escenario de login con usuario existente, al intentar registrar un usuario que ya existe, la API devuelve un estado HTTP 200 en lugar del esperado 401 o un código específico que denote un conflicto o una condición de error. Este comportamiento no sigue las mejores prácticas de desarrollo de API, ya que no proporciona una distinción clara entre las respuestas exitosas y las condiciones de error.
 
-## Conclusiones y Recomendaciones
+3) Conclusiones y Recomendaciones
 
-- **Revisión de la Gestión de Errores**: Es fundamental revisar la implementación de la API para asegurar que se devuelvan códigos de estado HTTP apropiados en respuesta a situaciones de error, como el intento de registro de un usuario ya existente o el inicio de sesión con credenciales inválidas.
+-Revisión de la Gestión de Errores**: Es fundamental revisar la implementación de la API para asegurar que se devuelvan códigos de estado HTTP apropiados en respuesta a situaciones de error, como el intento de registro de un usuario ya existente o el inicio de sesión con credenciales inválidas.
 
-- **Mejora de las Respuestas de la API**: Además de ajustar los códigos de estado, sería beneficioso incluir mensajes de error más descriptivos en el cuerpo de la respuesta para facilitar la identificación y resolución de problemas por parte de los consumidores de la API.
+-Mejora de las Respuestas de la API**: Además de ajustar los códigos de estado, sería beneficioso incluir mensajes de error más descriptivos en el cuerpo de la respuesta para facilitar la identificación y resolución de problemas por parte de los consumidores de la API.
 
-- **Actualización de las Pruebas Automatizadas**: Las pruebas automatizadas deben ser actualizadas para reflejar las expectativas correctas en cuanto a los códigos de estado y los mensajes de respuesta. Esto ayudará a garantizar una validación precisa de la funcionalidad de la API y a identificar áreas de mejora en futuros ciclos de desarrollo.
+-Actualización de las Pruebas Automatizadas**: Las pruebas automatizadas deben ser actualizadas para reflejar las expectativas correctas en cuanto a los códigos de estado y los mensajes de respuesta. Esto ayudará a garantizar una validación precisa de la funcionalidad de la API y a identificar áreas de mejora en futuros ciclos de desarrollo.
 
-- **Colaboración con el Equipo de Desarrollo**: Se recomienda trabajar en estrecha colaboración con el equipo de desarrollo para abordar los problemas identificados y asegurar que las modificaciones en la API se alineen con las mejores prácticas y los estándares de la industria.
+-Colaboración con el Equipo de Desarrollo**: Se recomienda trabajar en estrecha colaboración con el equipo de desarrollo para abordar los problemas identificados y asegurar que las modificaciones en la API se alineen con las mejores prácticas y los estándares de la industria.
 
