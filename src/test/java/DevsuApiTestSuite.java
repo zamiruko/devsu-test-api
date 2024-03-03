@@ -1,19 +1,19 @@
 import com.intuit.karate.junit5.Karate;
 
-class KarateRunner {
+public class DevsuApiTestSuite {
 
     @Karate.Test
-    Karate testAll() {
+    Karate runAllTests() {
         return Karate.run().relativeTo(getClass());
     }
 
     @Karate.Test
-    Karate testSignup() {
+    Karate runSignupTests() {
         return Karate.run("Signup").relativeTo(getClass());
     }
 
     @Karate.Test
-    Karate testLogin() {
+    Karate runLoginTests() {
         return Karate.run("Login").relativeTo(getClass());
     }
 }
